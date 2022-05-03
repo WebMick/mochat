@@ -73,10 +73,13 @@
       // 接收到到ews数据
       wsGetMsg(data){
         console.log({data});
+        let { data: { msgData } } = data;
+        msgData = JSON.parse(msgData);
+        let { content } = msgData.data
         // 本地存的数据格式
         let msg = {
           msgId: '',
-          msg: data,
+          msg: content,
           type: 1, 
           isRead: true
         };

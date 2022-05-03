@@ -15,10 +15,9 @@
         let { data } = e;
         if(!data) return;
         data = JSON.parse(data);
-        let { event = '' } = data;
+        let { event } = data;
         // 关闭心跳包的监听
-        // if(!event || event == "heartbeat") return;
-        if(!event) return;
+        if(!event || event == "heartbeat") return;
         this.wsGetMsg(data);
       },
       webSocketOpen(){
@@ -51,7 +50,7 @@
         if(this.wsIsOpen){
           this.wsHeartBeatTimer = setInterval(() => {
             this.webSocketSendMessage({"event":"heartbeat"})
-          }, 10 * 1000);
+          }, 3 * 1000);
         }
       }
     }
