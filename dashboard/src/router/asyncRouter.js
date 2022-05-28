@@ -805,5 +805,12 @@ export const routeList = {
     component: () => import(/* webpackChunkName: "radar" */ '@/views/chat/index'),
     // hidden: true,
     meta: { title: '聊天聚合' }
+  },
+  '/chat/contect': {
+    path: '/chat/contect',
+    name: '/chatContect',
+    component: () => import(/* webpackChunkName: "radar" */ '@/views/chat/contect'),
+    // hidden: true,
+    meta: { title: '聊天聚合' }
   }
 }

@@ -165,9 +165,9 @@
           <div slot="news" slot-scope="text, record">
             <div class="news">
               <img :src="record.avatar"/>
-              <sapn class="name">
+              <span class="name">
                 {{ record.name }}
-              </sapn>
+              </span>
             </div>
           </div>
           <div slot="businessNo" slot-scope="text, record">
@@ -343,6 +343,7 @@ export default {
     }
   },
   created () {
+    this.employeeIdList = this.$route.query.employeeId || ''
     this.getTableData()
     this.getGroupChatList()
     this.getCustomersSource()
@@ -369,7 +370,7 @@ export default {
       }
       workContactList(params).then(res => {
         this.roomIdList = []
-        this.employeeIdList = ''
+        //this.employeeIdList = ''
         this.employees = []
         this.tableData = res.data.list
         this.pagination.total = res.data.page.total

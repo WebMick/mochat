@@ -113,7 +113,6 @@
         </a-form-item>
       </a-form>
     </div>
-    <div class="footer">Powered by <a class="mochat" href="https://mo.chat/" target="_blank">MoChat</a></div>
   </div>
 </template>
 

@@ -13,9 +13,7 @@
       <global-header :is-mobile="isMobile" :theme="settings.theme"></global-header>
     </template>
     <template v-slot:footerRender>
-      <div class="footer">
-        Powered by <a class="mochat" href="https://mo.chat/" target="_blank">MoChat</a>
-      </div>
+      <div class="footer"></div>
     </template>
     <div class="breadcrumb-wrapper">
       <div class="chunk"></div>

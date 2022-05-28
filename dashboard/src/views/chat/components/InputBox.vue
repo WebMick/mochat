@@ -6,10 +6,15 @@
       </div>
     </div>
     <div class="ipt">
-      <textarea class="textarea" v-model="content"></textarea>
+      <a-textarea  
+        v-model="content" 
+        :bordered="false" 
+        placeholder="输入你需要回复的内容" 
+        :rows="5" 
+        @pressEnter="sendMsg"/>
     </div>
     <div class="sendBox">
-      <div class="btnSend" @click="sendMsg" @keyup.enter="sendMsg">发送(Enter)</div>
+      <div class="btnSend" @click="sendMsg">发送(Enter)</div>
     </div>
   </div>
 </template>
@@ -35,6 +40,9 @@
   .inputBox{
     display: flex;
     flex-direction: column;
+    border-top: 1px solid #d6d6d6;
+    background: #eee;
+    width: calc(100% - 10px);
     .action{
       height: 25px;
       display: flex;

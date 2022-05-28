@@ -1,12 +1,12 @@
 <template>
   <div class="modalList">
     <div class="item"
-      v-for="(item, index) in msgData.msg"
+      v-for="(item, index) in msgData"
       :key="index"
       >
       <div class="msgBox left" v-if="item.type == 1">
         <div class="infoBox">
-          <img class="headImg" :src="msgData.firendInfo.headImg" >
+          <!-- <img class="headImg" :src="msgData.firendInfo.headImg" > -->
         </div>
         <div class="msg">
           <div class="arrow"></div>
@@ -19,7 +19,7 @@
           {{item.msg}}
         </div>
         <div class="infoBox">
-          <img class="headImg" :src="msgData.userInfo.headImg" >
+          <img class="headImg" :src="item.headImg" >
         </div>
       </div>
     </div>
@@ -30,9 +30,9 @@
   export default{
     props: {
       msgData: {
-        type: Object,
+        type: Array,
         default: function(){
-          return {}
+          return []
         }
       }
     }
@@ -68,7 +68,7 @@
         }
         .msg{
           margin: 0 10px;
-          background: #eaeaea;
+          background: #fff;
           padding: 5px;
           line-height: 20px;
           font-size: 14px;
@@ -81,7 +81,7 @@
             width: 0;
             height: 0;
             border: solid 6px;
-            border-right-color: #eaeaea;
+            border-right-color: #fff;
             border-left-color: transparent;
             border-top-color: transparent;
             border-bottom-color: transparent;
